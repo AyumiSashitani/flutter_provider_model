@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterprovidermodel/book_list_page.dart';
 import 'package:flutterprovidermodel/main_model.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         create: (_) => MainModel(),
         child: Scaffold(
           appBar: AppBar(
-            title: Text("コリアンダー"),
+            title: Text("テスト"),
           ),
           body: Consumer<MainModel>(builder: (context, model, child) {
             return Center(
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
                     child: Text("ボタン"),
                     onPressed: () {
                       //ボタンが押された時
-                      model.changeKboyText();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => BookList()));
                     },
                   )
                 ],
